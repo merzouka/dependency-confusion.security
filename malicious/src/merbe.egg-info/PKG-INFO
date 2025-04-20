@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: merbe
+Version: 0.0.1
+Summary: A package for presentation in the systems' security module (dependency confusion)
+Author-email: Merzouka Youness <ya.merzouka@esi-sba.dz>, BEKHTI Djalal <ya.merzouka@esi-sba.dz>
+License-Expression: GPL-3.0-or-later
+Project-URL: Homepage, https://github.com/merzouka/dependency-confusion.security.git
+Project-URL: Issues, https://github.com/merzouka/dependency-confusion.security/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# dependency-confusion.security
+A package for a demo of Dependency Confusion Attack in Supply Chains for Security module
