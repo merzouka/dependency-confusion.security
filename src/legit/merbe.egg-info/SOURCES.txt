@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+merbe.egg-info/PKG-INFO
+merbe.egg-info/SOURCES.txt
+merbe.egg-info/dependency_links.txt
+merbe.egg-info/top_level.txt
