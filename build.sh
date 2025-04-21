@@ -16,3 +16,12 @@ done
 cd $path
 python -m build
 
+cd $origin
+if [ -L $origin/packages/$package ]; then
+    echo "Removing old symbolic link..."
+    rm $origin/packages/$package
+    exit
+fi
+
+echo "Creating symbolic link..."
+ln -s $path/dist $origin/packages/$package
