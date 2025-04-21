@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/sample-package-security/__init__.py
+src/sample_package_security.egg-info/PKG-INFO
+src/sample_package_security.egg-info/SOURCES.txt
+src/sample_package_security.egg-info/dependency_links.txt
+src/sample_package_security.egg-info/top_level.txt
