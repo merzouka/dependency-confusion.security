@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  devpi:
+    image: muccg/devpi
+    container_name: devpi
+    ports:
+      - "3141:3141"
+    volumes:
+      - "/srv/docker/devpi:./packages/"
+    environment:
+      - DEVPI_PASSWORD=merbe-package
+    restart: always
