@@ -15,3 +15,19 @@
 2025-04-21 12:07:47,175 INFO Included extra file "/home/merzouka/esi/security/presentation/demo/gen-config/supervisor-devpi.conf" during parsing
 2025-04-21 12:09:12,356 INFO spawned: 'devpi-server' with pid 23191
 2025-04-21 12:09:17,371 INFO success: devpi-server entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2025-04-21 12:12:46,627 INFO waiting for devpi-server to die
+2025-04-21 12:12:46,690 WARN stopped: devpi-server (terminated by SIGTERM)
+2025-04-21 12:13:18,747 INFO Included extra file "/home/merzouka/esi/security/presentation/demo/gen-config/supervisor-devpi.conf" during parsing
+2025-04-21 12:13:18,751 INFO RPC interface 'supervisor' initialized
+2025-04-21 12:13:18,751 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2025-04-21 12:13:18,753 INFO daemonizing the supervisord process
+2025-04-21 12:13:18,754 INFO supervisord started with pid 24481
+2025-04-21 12:13:19,758 INFO spawned: 'devpi-server' with pid 24498
+2025-04-21 12:13:24,759 INFO success: devpi-server entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2025-04-21 12:20:24,713 INFO Included extra file "/home/merzouka/esi/security/presentation/demo/gen-config/supervisor-devpi.conf" during parsing
+2025-04-21 12:20:25,069 INFO waiting for devpi-server to stop
+2025-04-21 12:20:25,133 WARN stopped: devpi-server (terminated by SIGTERM)
+2025-04-21 12:20:25,414 INFO spawned: 'devpi-server' with pid 26629
+2025-04-21 12:20:30,430 INFO success: devpi-server entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2025-04-21 12:25:59,924 INFO waiting for devpi-server to stop
+2025-04-21 12:25:59,997 WARN stopped: devpi-server (terminated by SIGTERM)
