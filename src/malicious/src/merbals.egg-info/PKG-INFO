@@ -1,17 +1,29 @@
 Metadata-Version: 2.4
 Name: merbals
-Version: 3.4.12
+Version: 3.4.13
 Summary: A package for presentation in the systems' security module (dependency confusion)
-Author-email: Merzouka Youness <ya.merzouka@esi-sba.dz>, BEKHTI Djalal <d.bekhti@esi-sba.dz>
-License-Expression: GPL-3.0-or-later
-Project-URL: Homepage, https://github.com/merzouka/dependency-confusion.security.git
-Project-URL: Issues, https://github.com/merzouka/dependency-confusion.security/issues
-Classifier: Programming Language :: Python :: 3
-Classifier: Operating System :: OS Independent
-Requires-Python: >=3.12
-Description-Content-Type: text/markdown
+Home-page: https://github.com/merzouka/dependency-confusion.security.git
+Author: Merzouka Youness/Bekhti Djalal
+Author-email: ya.merzouka@esi-sba.dz
+Project-URL: Bug Reports, https://github.com/pypa/sampleproject/issues
+Project-URL: Funding, https://donate.pypi.org
+Project-URL: Say Thanks!, http://saythanks.io/to/example
+Project-URL: Source, https://github.com/pypa/sampleproject/
+Keywords: sample,setuptools,development
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.7, <4
 License-File: LICENSE
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
 Dynamic: license-file
-
-# dependency-confusion.security
-A package for a demo of Dependency Confusion Attack in Supply Chains for Security module
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
