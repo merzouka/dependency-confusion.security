@@ -1,9 +1,10 @@
 LICENSE
 README.md
-pyproject.toml
+setup.py
 src/merbals/__init__.py
 src/merbals/printers.py
 src/merbals.egg-info/PKG-INFO
 src/merbals.egg-info/SOURCES.txt
 src/merbals.egg-info/dependency_links.txt
+src/merbals.egg-info/requires.txt
 src/merbals.egg-info/top_level.txt
