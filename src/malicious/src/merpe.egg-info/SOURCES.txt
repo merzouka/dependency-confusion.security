@@ -1,9 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-src/merpe/__init__.py
-src/merpe/printers.py
-src/merpe.egg-info/PKG-INFO
-src/merpe.egg-info/SOURCES.txt
-src/merpe.egg-info/dependency_links.txt
-src/merpe.egg-info/top_level.txt
