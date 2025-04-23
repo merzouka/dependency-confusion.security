@@ -1,4 +1,4 @@
 import merbals.printers as printers
 
-printers.ConsoleLogger().print()
+printers.ConsoleLogger().p()
 
