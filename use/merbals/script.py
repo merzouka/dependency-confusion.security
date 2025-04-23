@@ -1,4 +1,4 @@
-import merpe.printers as printers
+import merbals.printers as printers
 
 printers.ConsoleLogger().print()
 

