@@ -1,6 +1,6 @@
 [project]
 name = "merbals"
-version = "0.0.1"
+version = "3.3.1"
 authors = [
   { name="Merzouka Youness", email="ya.merzouka@esi-sba.dz" },
   { name="BEKHTI Djalal", email="d.bekhti@esi-sba.dz" },
