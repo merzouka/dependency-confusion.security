@@ -4,8 +4,11 @@ origin="/home/merzouka/esi/security/presentation/demo"
 path="$origin/src/legit"
 package=$(cat "$path/pyproject.toml" | grep -E '^name' | awk -F ' = ' '{print $2}' | tr -d '"')
 
-echo "Removing dist folder..."
-rm -r "$path/dist"
+if [ -d "$path/dist" ]; then
+    echo "Removing dist folder..."
+    rm -r "$path/dist"
+fi
+
 for folder in $(ls $path/src); do
     if [ ! "$folder" = "$package" ]; then
         echo "Removing $folder..."
