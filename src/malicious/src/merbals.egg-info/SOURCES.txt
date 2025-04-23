@@ -1,5 +1,6 @@
 LICENSE
 README.md
+pyproject.toml
 setup.py
 src/merbals/__init__.py
 src/merbals/printers.py

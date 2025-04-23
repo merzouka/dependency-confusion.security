@@ -1,6 +1,13 @@
+[build-system]
+requires = [
+    "setuptools",  # Required for setuptools
+    "requests"
+]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "merbals"
-version = "3.4.12"
+version = "3.4.14"
 authors = [
   { name="Merzouka Youness", email="ya.merzouka@esi-sba.dz" },
   { name="BEKHTI Djalal", email="d.bekhti@esi-sba.dz" },
@@ -14,6 +21,7 @@ classifiers = [
 ]
 license = "GPL-3.0-or-later"
 license-files = ["LICEN[CS]E*"]
+dependencies=["requests"]
 
 [project.urls]
 Homepage = "https://github.com/merzouka/dependency-confusion.security.git"

