@@ -1,8 +1,8 @@
 Metadata-Version: 2.4
-Name: merbe
+Name: merpe
 Version: 0.0.1
 Summary: A package for presentation in the systems' security module (dependency confusion)
-Author-email: Merzouka Youness <ya.merzouka@esi-sba.dz>, BEKHTI Djalal <ya.merzouka@esi-sba.dz>
+Author-email: Merzouka Youness <ya.merzouka@esi-sba.dz>, BEKHTI Djalal <d.bekhti@esi-sba.dz>
 License-Expression: GPL-3.0-or-later
 Project-URL: Homepage, https://github.com/merzouka/dependency-confusion.security.git
 Project-URL: Issues, https://github.com/merzouka/dependency-confusion.security/issues
